@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace SimpleLogin
 {
@@ -14,6 +15,19 @@ namespace SimpleLogin
             new Usuarios(){Nome = "Teste", Senha = "123"},
             new Usuarios(){Nome = "POOTest", Senha = "21POO"},
         };
+        
+        public static void AdicionarUsuario(string nome,  string senha, string nomeCompleto)
+        {
+            Usuarios[] novoArray = new Usuarios[usuarios.Length + 1];
+            for (int i = 0; i < usuarios.Length; i++)
+            {
+                novoArray[i] = usuarios[i];
+            }
+
+            novoArray[novoArray.Length - 1] = new Usuarios() { Nome = nome, Senha = senha, NomeCompleto = nomeCompleto};
+
+            usuarios = novoArray;
+        }
 
         private static Usuarios _usuarioLogado = null;
 

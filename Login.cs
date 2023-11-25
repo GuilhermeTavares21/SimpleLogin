@@ -52,5 +52,16 @@ namespace SimpleLogin
             Cancelar = true;
             Close();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastro formCadastro = new FormCadastro();
+            formCadastro.ShowDialog();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
